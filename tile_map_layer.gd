@@ -23,4 +23,5 @@ func _input(event: InputEvent) -> void:
 			latest_mouse_coords = mouse_coords
 			set_cell(latest_mouse_coords, 0, Vector2i.ZERO, 1)
 			stale_tiles.append(latest_mouse_coords)
-			notify_runtime_tile_data_update()
+			call_deferred("notify_runtime_tile_data_update")
+			#notify_runtime_tile_data_update()
